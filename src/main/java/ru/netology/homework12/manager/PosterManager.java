@@ -1,8 +1,20 @@
 package ru.netology.homework12.manager;
 
 public class PosterManager {
-    String[] films = new String[0];
+    private String[] films = new String[0];
     private int maxLimit;
+
+    public PosterManager() {
+        maxLimit = 5;
+    }
+
+    public PosterManager(int maxLimit) {
+        if (maxLimit > 0) {
+            this.maxLimit = maxLimit;
+        } else {
+            this.maxLimit = 5;
+        }
+    }
 
     public void setFilms(String[] films) {
         this.films = films;
@@ -18,18 +30,6 @@ public class PosterManager {
 
     public int getMaxLimit() {
         return maxLimit;
-    }
-
-    public PosterManager() {
-        maxLimit = 5;
-    }
-
-    public PosterManager(int maxLimit) {
-        if (maxLimit > 0) {
-            this.maxLimit = maxLimit;
-        } else {
-            this.maxLimit = 5;
-        }
     }
 
     public void addNewFilm(String newFilm) {
